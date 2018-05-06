@@ -17,19 +17,19 @@ alias cs="csvsql -v --table tbl --no-inference --no-constraints --query"
 ### distinct_offices
 
 ```
-cs "SELECT DISTINCT BIOGUIDE_ID, OFFICE FROM tbl" 2017Q4-house-disburse-detail.csv
+cs "SELECT DISTINCT BIOGUIDE_ID, OFFICE FROM tbl" data/2017Q4-house-disburse-detail.csv
 ```
 
 ### amount_by_category
 
 ```
-cs "SELECT CATEGORY, SUM(AMOUNT) AS AMOUNT FROM tbl GROUP BY CATEGORY ORDER BY AMOUNT DESC" 2017Q4-house-disburse-detail.csv
+cs "SELECT CATEGORY, SUM(AMOUNT) AS AMOUNT FROM tbl GROUP BY CATEGORY ORDER BY AMOUNT DESC" data/2017Q4-house-disburse-detail.csv
 ```
 
 #### amount_by_category for a congress person
 
 ```
-cs "SELECT CATEGORY, SUM(AMOUNT) AS AMOUNT FROM tbl WHERE BIOGUIDE_ID='R000570' GROUP BY CATEGORY ORDER BY AMOUNT DESC" 2017Q4-house-disburse-detail.csv
+cs "SELECT CATEGORY, SUM(AMOUNT) AS AMOUNT FROM tbl WHERE BIOGUIDE_ID='R000570' GROUP BY CATEGORY ORDER BY AMOUNT DESC" data/2017Q4-house-disburse-detail.csv
 ```
 
 ```
@@ -49,5 +49,5 @@ C000714,HON. JOHN CONYERS JR.
 -------------------------------------
 
 ```
-cs "SELECT OFFICE, SUM(AMOUNT) AS AMOUNT FROM tbl WHERE PURPOSE='WATER' GROUP BY OFFICE ORDER BY AMOUNT DESC" 2017Q4-house-disburse-detail.csv
+cs "SELECT OFFICE, SUM(AMOUNT) AS AMOUNT FROM tbl WHERE PURPOSE='WATER' GROUP BY OFFICE ORDER BY AMOUNT DESC" data/2017Q4-house-disburse-detail.csv
 ```
